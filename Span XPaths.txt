@@ -1,0 +1,71 @@
+
+HTML
+----
+<tbody role="rowgroup">
+<tr class="" data-uid="2f3646c6-213a-4e91-99f9-0fbaa5f7755d" role="row" aria-selected="false">
+<td class="select-row" role="gridcell">
+<td class="font-md" role="gridcell">marker, Lion</td>
+<td role="gridcell">TESTLINK_1_ArchScenario</td>
+<td role="gridcell">1st</td>
+<td role="gridcell">Not Started</td>
+<td role="gridcell"/>
+<td role="gridcell"/>
+<td role="gridcell">QA Automation TestLink Folders</td>
+<td class="k-cell-action" role="gridcell"/>
+<td class="k-cell-action detail-view-link font-md" role="gridcell">
+<span class="button-grid-action kendo-lexia-tooltip icon-pencil" role="button" title="Edit Student">
+<span>Edit Student</span>
+</span>
+</td>
+<td class="k-cell-action archive-link font-md" role="gridcell">
+<span class="button-grid-action kendo-lexia-tooltip icon-archive" role="button" title="Archive Student">
+<span>Archive Student</span>
+</span>
+</td>
+</tr>
+</tbody>
+
+<span class="button-grid-action kendo-lexia-tooltip icon-pencil" role="button" title="Edit Student">
+<span>Edit Student</span>
+</span>
+
+Answer1
+-------
+
+If you want to select span with text - Edit Studen try any of this:
+
+//span[@title='Edit Student']/span
+//span[text()='Edit Student']
+
+If you want to select Edit Studen with role="button" try any of this:
+
+//span[@title='Edit Student'][@role='button']
+//span[@role='button'][./span[text()='Edit Student']]
+//span[@role='button'][./span[.='Edit Student']]
+
+
+Answer2
+-------
+
+//span[contains(text(),'Edit Student')]
+//*[contains(text(),'Edit Student')]
+//span [@class='button-grid-action kendo-lexia-tooltip icon-pencil']/span
+//span [@title='Edit Student']/span
+//span [contains(@title,'Edit Student')]/span
+//span [contains(@class,'button-grid-action kendo-lexia-tooltip icon-pencil')]/span
+
+************************************************************************************************************
+<a itemprop="url" href="/best-python-ide-python-programming/" title="Best Python IDE">
+<span itemprop="name">Python IDE</span>
+</a>
+
+Working
+
+//a[@href='/best-python-ide-python-programming/'][./span[text()='Python IDE']]
+
+//a[@title='Best Python IDE'][./span[text()='Python IDE']]
+
+//a[@title='Best Python IDE'][./span[.='Python IDE']]
+
+//span[text()='Python IDE']
+
